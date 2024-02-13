@@ -1,9 +1,10 @@
 <template>
   <div>
-    <Nav />
-    <div class="container">
-      <RestaurantTable />
-    </div>
+    <NuxtLayout name="custom-ad">
+      <div class="container">
+        <RestaurantTable />
+      </div>
+    </NuxtLayout>
   </div>
 </template>
 

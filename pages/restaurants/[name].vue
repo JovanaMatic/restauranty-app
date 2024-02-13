@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import restaurants from '@/data.json'
-  
+
   const route = useRoute()
   const getNamefromURL = route.params.name
 
@@ -10,7 +10,8 @@
 
 <template>
   <div>
-    <div v-if="getNameData" class="restaurant-container">
+    <NuxtLayout v-if="getNameData" name="custom-ad">
+    <div class="restaurant-container">
       <div class="image-container">
         <img :src="getNameData.imageUrl" alt="" />
       </div>
@@ -27,6 +28,7 @@
         <p class="content">{{ getNameData.content }}</p>
       </div>
     </div>
+    </NuxtLayout>
     <div v-else>
       <p>Sorry there is no restaurant according to this name: {{ route.params.name }}</p>
       <p>Checkout our <NuxtLink to="/restaurants">list</NuxtLink> of restaurants</p>
