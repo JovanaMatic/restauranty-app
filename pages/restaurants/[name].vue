@@ -6,6 +6,13 @@
 
   const getNameData = restaurants.find(name => name.name === getNamefromURL)
 
+  useHead({
+    title: getNameData ? getNamefromURL : '404 - restaurant not found',
+    meta: [
+      { name: 'restaurant', content: 'Top 50 restaurants in USA'}
+    ]
+  })
+
 </script>
 
 <template>
